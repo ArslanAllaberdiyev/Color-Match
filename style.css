@@ -1,0 +1,87 @@
+body, html { 
+    margin: 0; padding: 0; height: 100%; width: 100%; 
+    font-family: -apple-system, sans-serif; overflow: hidden; 
+    background-color: #000;
+}
+
+#game-container {
+    position: relative; width: 100vw; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    transition: background-color 0.15s ease-out;
+}
+
+#timer {
+    position: absolute; top: 40px; right: 40px;
+    font-size: 5rem; font-weight: bold; color: white; z-index: 10;
+}
+
+#message { font-size: 5rem; font-weight: bold; color: white; z-index: 10; }
+
+#ui-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; z-index: 20; background: transparent;
+}
+
+.slider-pillar {
+    height: 100vh; width: 60px;
+    position: relative; overflow: hidden;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100vh;
+    height: 60px;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    background: transparent; margin: 0; cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 45px; width: 45px; border-radius: 50%;
+    background: white; border: 4px solid black;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.pillar-label {
+    position: absolute; bottom: 20px; width: 100%;
+    text-align: center; font-size: 0.65rem; color: white;
+    text-transform: uppercase; font-weight: bold; pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+#submit-btn {
+    position: absolute; bottom: 40px; right: 40px;
+    width: 80px; height: 80px; border-radius: 50%;
+    background: white; border: none; cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.1s;
+}
+
+#submit-btn:active { transform: scale(0.9); }
+
+#replay-btn {
+    position: absolute; bottom: 40px; right: 40px;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: white; border: none; cursor: pointer;
+}
+
+.split-screen {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; z-index: 30;
+}
+
+.half { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; }
+
+#final-score {
+    position: absolute; top: 40px; right: 40px;
+    font-size: 6rem; font-weight: 900; color: white;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.label-text { color: white; font-size: 1rem; opacity: 0.8; margin-bottom: 5px; }
+.val-text { color: white; font-size: 1.6rem; font-weight: bold; }
+
+.hidden { display: none !important; }
